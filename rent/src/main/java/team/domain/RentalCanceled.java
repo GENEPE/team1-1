@@ -1,0 +1,26 @@
+package team.domain;
+
+import java.util.*;
+import lombok.*;
+import team.domain.*;
+import team.infra.AbstractEvent;
+
+@Data
+@ToString
+public class RentalCanceled extends AbstractEvent {
+
+    private Long orderId;
+    private Long productId;
+    private Date startTime;
+    private Date endTime;
+    private Long rentHour;
+    private Long totalPrice;
+
+    public RentalCanceled(Rent aggregate) {
+        super(aggregate);
+    }
+
+    public RentalCanceled() {
+        super();
+    }
+}
